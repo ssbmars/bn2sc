@@ -1,0 +1,11 @@
+/.release/*
+/.ignore/*
+*.exe
+*.dll
+*.gba
+*.sav
+*.sym
+*.nlz
+*.lnk
+*.png
+*.bps
