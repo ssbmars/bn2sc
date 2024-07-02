@@ -17,7 +17,13 @@ ShieldLag:
 mov		r0,0x8
 strb	r0,[r5,0x7]
 
+//	only do cooldown if it's the B+Left shield
 ldr		r1,=2008AD0h
+mov		r0,1
+ldrb	r0,[r1,r0]
+cmp		r0,2		//this is the level indicator for the shield routine
+bne		@@exit
+//	apply cooldown
 ldrb	r0,[r1]
 cmp		r0,30
 bgt		@@exit
