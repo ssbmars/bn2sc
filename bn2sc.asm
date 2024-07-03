@@ -18,17 +18,17 @@ mov		r0,0x8
 strb	r0,[r5,0x7]
 
 //	only do cooldown if it's the B+Left shield
-ldr		r1,=2008AD0h
-mov		r0,1
-ldrb	r0,[r1,r0]
+mov		r0,0x61
+ldrb	r0,[r5,r0]
 cmp		r0,2		//this is the level indicator for the shield routine
 bne		@@exit
 //	apply cooldown
-ldrb	r0,[r1]
+mov		r1,0x60
+ldrb	r0,[r5,r1]
 cmp		r0,30
 bgt		@@exit
 mov		r0,30
-strb	r0,[r1]
+strb	r0,[r5,r1]
 @@exit:
 mov		r15,r14
 .pool
